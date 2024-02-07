@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import Login from './Login';
 import Header from './Header'
 import Registration from './Registration'
 import './App.css';
 import {Route,Routes,  BrowserRouter as Router} from 'react-router-dom'
-import User from './User';
+import User from './User.jsx';
 
 function App() {
 

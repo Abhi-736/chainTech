@@ -13,8 +13,9 @@ const [storeData,setstoreData]= useState(JSON.parse(localStorage.getItem('userDa
 
 const handleSubmit=(e)=>{
     e.preventDefault();
-    const isUserPresent= storeData&&storeData.find((userObject)=>userObject.name==name&&userObject.email===email&& userObject.password===password);
-    isUserPresent?(navigate('/User',{state:{}})):(setwrongDetails(true))
+    const isUserPresent= storeData&&storeData.filter((userObject)=>userObject.name==name&&userObject.email===email&& userObject.password===password);
+    isUserPresent?(navigate('/User',{state:isUserPresent})):(setwrongDetails(true))
+   
 }
 
   return (<div className='container-fluid'>
